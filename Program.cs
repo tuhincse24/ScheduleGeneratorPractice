@@ -1,10 +1,8 @@
 ﻿using ScheduleGeneratorPractice;
-using System;
-using System.Collections.Generic;
 
 namespace RecurringScheduleGenerator
 {
-    class Program
+    public class Program
     {
         public class Row
         {
