@@ -1,4 +1,5 @@
 using RecurringScheduleGenerator;
+using TechTalk.SpecFlow.Assist;
 
 namespace ScheduleGeneratorPractice.Specs.StepDefinitions
 {
@@ -52,8 +53,28 @@ namespace ScheduleGeneratorPractice.Specs.StepDefinitions
             .ToList();
 
             int intervalInWeeks = 2;
-            var instances = Program.GenerateRecurringSchedule(daysOfWeek: daysOfWeek, startDate: startDate, endDate: endDate, intervalInWeeks : intervalInWeeks);
+            var instances = Program.GenerateRecurringSchedule(daysOfWeek: daysOfWeek, startDate: startDate, endDate: endDate, intervalInWeeks: intervalInWeeks);
             instances.Should().HaveCount(instanceCount);
+        }
+
+        [Then("event instance count should be")]
+        public void ThenTheInstancesShouldBe(Table values)
+        {
+            IEnumerable<dynamic> products = values.CreateDynamicSet();
+            DateTime startDate = new DateTime(2023, 9, 1, 16, 0, 0).AddDays(-1);
+            DateTime endDate = new DateTime(2023, 9, 29);
+            //DateTime endDate = DateTime.Today.AddDays(1);
+
+            List<DayOfWeek> daysOfWeek = new List<DayOfWeek>
+            {
+                //DayOfWeek.Monday//,
+                DayOfWeek.Monday, DayOfWeek.Wednesday//, DayOfWeek.Tuesday, DayOfWeek.Wednesday//, DayOfWeek.Friday
+            }.OrderBy(x => x)
+            .ToList();
+
+            int intervalInWeeks = 2;
+            var instances = Program.GenerateRecurringSchedule(daysOfWeek: daysOfWeek, startDate: startDate, endDate: endDate, intervalInWeeks: intervalInWeeks);
+            //instances.Should().HaveCount(instanceCount);
         }
     }
 }

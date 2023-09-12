@@ -11,3 +11,14 @@ Scenario: Generate event instances
 	#And the second number is 70
 	#When the two numbers are added
 	Then the event instance count should be 4
+
+@mytag
+Scenario: Generate event instances for multiple daysOfWeek
+	#Given the first number is 50
+	#And the second number is 70
+	#When the two numbers are added
+	Then event instance count should be
+	| DateTimeOffsets |
+	| 5      |
+	| 1      |
+	| 3      |
