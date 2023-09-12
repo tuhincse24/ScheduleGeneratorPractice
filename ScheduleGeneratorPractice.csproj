@@ -8,6 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ScheduleGeneratorPractice.Specs\**" />
+    <EmbeddedResource Remove="ScheduleGeneratorPractice.Specs\**" />
+    <None Remove="ScheduleGeneratorPractice.Specs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Ical.Net" Version="4.2.0" />
   </ItemGroup>
 
