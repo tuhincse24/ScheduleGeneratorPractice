@@ -37,6 +37,7 @@ namespace ScheduleGeneratorPractice
             recurrenceRule.ByDay.Add(new WeekDay(DayOfWeek.Monday));
             recurrenceRule.ByDay.Add(new WeekDay(DayOfWeek.Saturday));
             recurringEvent.RecurrenceRules.Add(recurrenceRule);
+
             // Add the event to the calendar
             calendar.Events.Add(recurringEvent);
             var occurrences2 = calendar.GetOccurrences(recurringEvent.Start, new CalDateTime(recurrenceRule.Until, timezone))
