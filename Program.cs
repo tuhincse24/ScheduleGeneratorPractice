@@ -51,7 +51,7 @@ namespace RecurringScheduleGenerator
             }
         }
 
-        static List<DateTime> GenerateRecurringSchedule(DateTime startDate, DateTime endDate, List<DayOfWeek> daysOfWeek, int intervalInWeeks)
+        public static List<DateTime> GenerateRecurringSchedule(DateTime startDate, DateTime endDate, List<DayOfWeek> daysOfWeek, int intervalInWeeks)
         {
             List<DateTime> schedule = new List<DateTime>();
             DateTime currentDate = startDate;
