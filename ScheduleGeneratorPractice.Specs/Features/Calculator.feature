@@ -18,7 +18,16 @@ Scenario: Generate event instances for multiple daysOfWeek
 	#And the second number is 70
 	#When the two numbers are added
 	Then event instance count should be
-	| DateTimeOffsets |
-	| 5      |
-	| 1      |
-	| 3      |
+		| DateTimeOffsets |
+		| 5               |
+		| 1               |
+		| 3               |
+
+@mytag
+Scenario: Add Online Store Products with Affiliate Codes
+Then add products
+| Url | AffilicateCode |
+| /dp/B00TSUGXKE/ref=ods_gw_d_h1_tab_fd_c3 | affiliate3 |
+| /dp/B00KC6I06S/ref=fs_ods_fs_tab_al | affiliate4 |
+| /dp/B0189XYY0Q/ref=fs_ods_fs_tab_ts | affiliate5 |
+| /dp/B018Y22C2Y/ref=fs_ods_fs_tab_fk | affiliate6 |

@@ -60,7 +60,11 @@ namespace ScheduleGeneratorPractice.Specs.StepDefinitions
         [Then("event instance count should be")]
         public void ThenTheInstancesShouldBe(Table values)
         {
-            IEnumerable<dynamic> products = values.CreateDynamicSet();
+            IEnumerable<dynamic> dateTimeOffsets = values.CreateDynamicSet();
+            foreach (var product in dateTimeOffsets)
+            {
+                var sfdklj = product.DateTimeOffsets;
+            }
             DateTime startDate = new DateTime(2023, 9, 1, 16, 0, 0).AddDays(-1);
             DateTime endDate = new DateTime(2023, 9, 29);
             //DateTime endDate = DateTime.Today.AddDays(1);
@@ -75,6 +79,16 @@ namespace ScheduleGeneratorPractice.Specs.StepDefinitions
             int intervalInWeeks = 2;
             var instances = Program.GenerateRecurringSchedule(daysOfWeek: daysOfWeek, startDate: startDate, endDate: endDate, intervalInWeeks: intervalInWeeks);
             //instances.Should().HaveCount(instanceCount);
+        }
+
+        [Then("add products")]
+        public void AddOnlineStoreProductsWthAffiliateCodes(Table values)
+        {
+            IEnumerable<dynamic> products = values.CreateDynamicSet();
+            foreach (var product in products)
+            {
+                var fs= string.Concat(product.Url, "?", product.AffilicateCode);
+            }
         }
     }
 }

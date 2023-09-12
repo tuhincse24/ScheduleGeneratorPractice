@@ -166,6 +166,58 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
+        [Xunit.SkippableFactAttribute(DisplayName="Add Online Store Products with Affiliate Codes")]
+        [Xunit.TraitAttribute("FeatureTitle", "Calculator")]
+        [Xunit.TraitAttribute("Description", "Add Online Store Products with Affiliate Codes")]
+        [Xunit.TraitAttribute("Category", "mytag")]
+        public virtual void AddOnlineStoreProductsWithAffiliateCodes()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "mytag"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Online Store Products with Affiliate Codes", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 27
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Url",
+                            "AffilicateCode"});
+                table2.AddRow(new string[] {
+                            "/dp/B00TSUGXKE/ref=ods_gw_d_h1_tab_fd_c3",
+                            "affiliate3"});
+                table2.AddRow(new string[] {
+                            "/dp/B00KC6I06S/ref=fs_ods_fs_tab_al",
+                            "affiliate4"});
+                table2.AddRow(new string[] {
+                            "/dp/B0189XYY0Q/ref=fs_ods_fs_tab_ts",
+                            "affiliate5"});
+                table2.AddRow(new string[] {
+                            "/dp/B018Y22C2Y/ref=fs_ods_fs_tab_fk",
+                            "affiliate6"});
+#line 28
+testRunner.Then("add products", ((string)(null)), table2, "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
         [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
         public class FixtureData : System.IDisposable
